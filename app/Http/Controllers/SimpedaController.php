@@ -19,6 +19,7 @@ class SimpedaController extends Controller
 
     }
 
+    //utk yang bertanda tangan
     public function store(Request $request)
     {
         $surat = SuratAktif::find(1);
@@ -34,6 +35,7 @@ class SimpedaController extends Controller
         return redirect('simpeda');
     }
 
+    //No surat
     public function update(Request $request)
     {
         $simpeda = simpeda::where('id' ,$request->id)->update([
@@ -45,7 +47,7 @@ class SimpedaController extends Controller
 
     public function show()
     {   
-        $simpeda = simpeda::where('permohonan', 'Surat Keterangan Aktif')->where('status', null)->latest()->get();
+        $simpeda = simpeda::where('permohonan', 'Surat Keterangan Aktif')->where('status', null)->get();
         $prodis = Http::get('https://siakad.sitpa.my.id/api/prodi')->json();
         foreach ($simpeda as $rs) {
             $prodiss = simpeda::hydrate($prodis)->where('id', $rs->prodi_id)->first(); 
@@ -53,6 +55,7 @@ class SimpedaController extends Controller
         }
         return view('simpeda.show', ['simpeda' => $simpeda]);
     }
+    
     public function showDownloaded()
     {    
         $simpeda = simpeda::where('permohonan', 'Surat Keterangan Aktif')->where('status', 'downloaded')->orderBy('updated_at', 'desc')->get();
@@ -86,7 +89,7 @@ class SimpedaController extends Controller
                     'user'=>$user, 
                     'prodi'=>$prodi,
                     'ttd' => $ttd,
-                    'norecent' => $latestNumb->nomor,
+                    'norecent' => $latestNumb,
                 ]
             );
         }else{

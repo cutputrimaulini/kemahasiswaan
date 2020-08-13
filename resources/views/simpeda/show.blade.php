@@ -1,4 +1,4 @@
-@extends('Layouts.index')
+@extends('layouts.index')
 @section('content')
 <div class="container-fluid mt-4">
     <div class="col-14">
@@ -32,7 +32,7 @@
                             @foreach($simpeda as $index=>$pj)
                             <tr>
                                 <td>{{ $index + 1}}</td>
-                                <td>{{ $pj->created_at}}</td>
+                                <td>{{ $pj->created_at->toDateString()}}</td>
                                 <td>{{ $pj->prodi_id}}</td>
                                 <td>{{ $pj->nim}}</td>
                                 <td>{{ $pj->nama}}</td>

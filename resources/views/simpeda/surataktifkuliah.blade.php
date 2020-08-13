@@ -1,4 +1,4 @@
-@extends('Layouts.index')
+@extends('layouts.index')
 @section('content')
 <style>
     @media print {
@@ -28,7 +28,7 @@
                 </button>
             </div>
             <div class="modal-body">
-            Nomor Surat Terakhir : {{ $norecent }}
+            Nomor Surat Terakhir : {{ $norecent['nomor'] }}
             <form action="{{route ('simpeda.update')}}" method="POST">
                     @csrf
                     <input type="hidden" name="id" value="{{ $simpeda->id }}">
@@ -59,13 +59,14 @@
         <a class="btn btn-block btn-success" href="{{ route('simpeda.pdfdownload', $simpeda->id) }}">Download PDF</a>
     </div>
 </div>
+
 <!-- SURAT AKTIF KULIAH -->
 <div class="col-12" id="printArea" >
     <div class="card">
         <html>
 
         <head>
-            <title>Undangan orang tua</title>
+            <title>Surat aktif Kuliah</title>
         </head>
 
         <body>
@@ -213,7 +214,5 @@
     
     });
 </script>
-<script>
 
-</script>
 @endsection

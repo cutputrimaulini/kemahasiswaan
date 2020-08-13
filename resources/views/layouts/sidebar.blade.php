@@ -26,12 +26,7 @@
                         <span class="nav-link-text">Dashboards</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                <a href="{{ route('mahasiswa.index') }}" class="nav-link">
-                    <i class="ni ni-ungroup text-orange"></i>
-                        <span class="nav-link-text">Kemahasiswaan</span>
-                    </a>
-                </li>
+               
                 <li class="nav-item">
               <a class="nav-link" href="#navbar-maps" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-maps">
                 <i class="ni ni-map-big text-primary"></i>

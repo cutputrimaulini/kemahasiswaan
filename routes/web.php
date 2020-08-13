@@ -24,10 +24,10 @@ Route::get('/', function () {
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
-
-//Prodi
 Route::get('/mahasiswa', 'MahasiswaController@index')->name('mahasiswa.index');
 
+
+//Simpeda
 Route::get('/simpeda', 'SimpedaController@show')->name('simpeda.show');
 Route::get('/simpeda/surataktifkuliah', 'SimpedaController@aktifkuliah')->name('simpeda.aktifkuliah');
 Route::get('/simpeda/tabel', 'SimpedaController@showDownloaded')->name('simpeda.tabel');

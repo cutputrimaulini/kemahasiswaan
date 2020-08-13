@@ -82,7 +82,7 @@
                                             <td><span style="font-size: x-small;">{{ $prodi->nama_prodi }}</span></td>
                                         </tr>
                                         <tr>
-                                            <td><span style="font-size: x-small;">Tingkat / Semester</span></td>
+                                            <td><span style="font-size: x-small;">Semester</span></td>
                                             <td><span style="font-size: x-small;">:</span></td>
                                             <td><span style="font-size: x-small;">{{ $simpeda->semester }}</span></td>
                                         </tr>

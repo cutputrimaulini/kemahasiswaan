@@ -1,4 +1,4 @@
-@extends('Layouts.index')
+@extends('layouts.index')
 @section('content')
 <div class="container-fluid mt-4">
 <div class="col-lg-14">
